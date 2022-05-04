@@ -1,0 +1,21 @@
+<meta charset="UTF-8">
+<script>
+    var funcionario, pecas, salario, dinheiro, total, n, percentual;
+    dinheiro = 0;
+    total = 0;
+    n = 0;
+    for(funcionario=1; funcionario<=50; funcionario++){
+        pecas = parseInt(prompt("Informe quantas peças o " + funcionario + "º funcionário produziu nesse mês."));
+        salario = 1000*(1 + pecas*0.05);
+        alert("O salário do " + funcionario + "º funcionário será: R$ " + salario.toFixed(2));
+        dinheiro += salario
+        total += pecas;
+        if(salario>4000 && salario<10000){
+            n++;
+        }
+    }
+    percentual = 100*(n/(funcionario-1));
+    document.write("O total de peças produzidas pelos funcionários foi " + total + ".<br>");
+    document.write("O valor total da folha de pagamento nesse mês foi de R$ " + dinheiro.toFixed(2) + "<br>");
+    document.write("A porcentagem de funcionários que recebem entre 4 e 10 salários mínimos é " + percentual.toFixed(1) + "%.");
+</script>

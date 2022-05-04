@@ -1,0 +1,71 @@
+<meta charset="UTF-8">
+<script>
+    var notas = new Array(15), i, j, alunos = new Array(15), nota, media, soma, melhor, aluno;
+    for(i=0; i<15; i++){
+        notas[i] = new Array(5);
+        alunos[i] = prompt("Informe o nome do(a) aluno(a) " + (i+1) + ".");
+    }
+    for(i=0; i<15; i++){
+        for(j=0; j<5; j++){
+            notas[i][j] = Number(prompt("Informe a " + (j+1) + "a. nota do(a) aluno(a): " + alunos[i]));
+            while(notas[i][j]<0 && notas[i][j]>10){
+                alert("Nota inválida. Apenas de 0 a 10.");
+                notas[i][j] = Number(prompt("Informe a " + (j+1) + "a. nota do(a) aluno(a): " + alunos[i]));
+            }
+        }
+    }
+    document.write("Aluno(a) || Notas<br>");
+    for(i=0; i<15; i++){
+    }
+    for(i=0; i<15; i++){
+        document.write(alunos[i] + ": ");
+        for(j=0; j<5; j++){
+            document.write(notas[i][j] + " ");
+        }
+        document.write("<br>");
+    }
+    document.write("<br>SITUAÇÃO DO(A) ALUNO(A):<br>");
+    for(i=0; i<15; i++){
+        soma = 0;
+        document.write(alunos[i] + ": ");
+        for(j=0; j<5; j++){
+            soma += notas[i][j];
+        }
+        media = soma / 5;
+        if(media > 8){
+            document.write("Média " + media + " - Aprovado(a).<br>");
+        } else {
+            if(media > 4){
+                document.write("Média " + media + " - Exame final.<br>");
+            } else {
+                document.write("Média " + media + " - Reprovado(a).<br>");
+            }
+        }
+    }
+    document.write("<br>PIOR NOTA DE CADA ALUNO(A):<br>");
+    for(i=0; i<15; i++){
+        pior = notas[i][0];
+        for(j=0; j<5; j++){
+            if(pior >= notas[i][j]){
+                pior = notas[i][j];
+                nota = j+1
+            }
+        }
+        document.write(alunos[i] + ": " + nota + "a. avaliação - " + pior + " pontos.<br>");
+    }
+    soma = 0;
+    melhor = notas[0][0];
+    for(i=0; i<15; i++){
+        for(j=0; j<5; j++){
+            soma += notas[i][j];
+            if(melhor < notas[i][j]){
+                melhor = notas[i][j];
+                nota = j+1;
+                aluno = alunos[i];
+            }
+        }
+    }
+    media = soma / 75;
+    document.write("<br>Média da turma: " + media.toFixed(2) + " pontos.<br>");
+    document.write("<br>MELHOR NOTA: " + aluno + " na " + nota + "a. avaliação.");
+</script>

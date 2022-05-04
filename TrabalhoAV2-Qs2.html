@@ -1,0 +1,36 @@
+<meta charset="UTF-8">
+<script>
+    var sexo, horas, salarioL, salarioB, codigo, m, h, salarioLm, salarioLh, mm, mh;
+    codigo = prompt("Informe o código do(a) professor(a).");
+    m = 0;
+    h = 0;
+    salarioLh = 0;
+    salarioLm = 0;
+    while(codigo != 99999){
+        sexo = prompt("Informe o sexo: M-masculino   F-feminino.");
+        while(sexo!="M" && sexo!="F"){
+            alert("Opção inválida!");
+            sexo = prompt("M-masculino   F-feminino");
+        }
+        horas = Number(prompt("Informe a quantidade de horas/aulas dadas por mês."));
+        salarioB = 30 * horas;
+        document.write(codigo + " - " + sexo + " - Salário Bruto: R$ " + salarioB.toFixed(2) + " - Salário Líquido: R$ ")
+        if(sexo == "F"){
+            m++;
+            salarioL = 0.95 * salarioB;
+            salarioLm += salarioL;
+            document.write(salarioL.toFixed(2) + "<br>");
+        }
+        if(sexo == "M"){
+            h++;
+            salarioL = 0.9 * salarioB;
+            salarioLh += salarioL;
+            document.write(salarioL.toFixed(2) + "<br>");
+        }
+        codigo = prompt("Informe o código do(a) professor(a).");
+    }
+    mm = salarioLm / m;
+    mh = salarioLh / h;
+    document.write("Média do salário líquido dos homens: R$ " + mh.toFixed(2) + "<br>");
+    document.write("Média do salário líquido das mulheres: R$ " + mm.toFixed(2));
+</script>

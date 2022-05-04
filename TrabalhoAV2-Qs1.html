@@ -1,0 +1,50 @@
+<meta charset="UTF-8">
+<script>
+    var opcao, salario, imposto, ajustado;
+    opcao = prompt("Informe o que deseja:   1. Imposto    2. Novo salário    3. Classificação    4. Finalizar o programa");
+    while(opcao!=1 && opcao!=2 && opcao!=3 && opcao!=4){
+        alert("Opção inválida! Informe o número correspondente ao que deseja.");
+        opcao = prompt("1. Imposto    2. Novo salário    3. Classificação    4. Finalizar o programa");
+    }
+    if(opcao == 1){
+        salario = Number(prompt("Informe o salário."));
+        if(salario < 500){
+            imposto = salario * 0.05
+        } else {
+            if(salario <= 850){
+                imposto = (500 * 0.05) + ((salario - 500) * 0.1);
+            } else {
+                imposto = (500 * 0.05) + ((850 - 500) * 0.1) + ((salario - 850) * 0.15);
+            }
+        }
+        document.write("Valor do imposto correspondente: R$ " + imposto);
+    }
+    if(opcao == 2){
+        salario = Number(prompt("Informe o salário atual."));
+        if(salario < 450){
+            ajustado = salario + 100;
+        } else {
+            if(salario < 750){
+                ajustado = salario + 75;
+            } else {
+                if(salario <= 1500){
+                    ajustado = salario + 50;
+                } else {
+                    ajustado = salario + 25;
+                }
+            }
+        }
+        document.write("Valor do salário ajustado: R$ " + ajustado);
+    }
+    if(opcao == 3){
+        salario = prompt("Informe o salário.");
+        if(salario <= 700){
+            document.write("Funcionário(a) mal remunerado(a).");
+        } else {
+            document.write("Funcionário(a) bem remunerado(a).");
+        }
+    }
+    if(opcao == 4){
+        document.write("Você finalizou o programa.");
+    }
+</script>

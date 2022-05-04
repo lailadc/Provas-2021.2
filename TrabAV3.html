@@ -1,0 +1,145 @@
+<meta charset="UTF-8">
+<script>
+    var i, n, cod, nota, notasCc = [], codigoCc = [], j, auxN, auxC, notasEc = [], codigoEc = [], notasAs = [], codigoAs = [], M = new Array(6);
+
+    //Ciências da Computação
+
+    i = 0;
+    n = 1;
+    alert("Os dados solicitados a seguir são referentes às vagas de Ciências da Computação.");
+    cod = prompt("Informe o código do 1º candidato.");
+    while(cod != 0){ //Preenchimento dos vetores
+        codigoCc[i] = cod;
+        nota = prompt("Informe a pontuação do " + n + "º candidato.");
+        while(nota<0 || nota>100){ //Validação da nota
+            alert("Nota inválida! A pontuação vale de 0 a 100.");
+            nota = prompt("Informe a pontuação do " + n + "º candidato.");
+        }
+        notasCc[i] = nota;
+        i++;
+        n++;
+        cod = prompt("Informe o código do " + n + "º candidato.");
+    }
+    //Lista de pontuação desordenada
+    document.write("Candidatos de Ciências da Computação (CC):<br>");
+    document.write("Código: " + codigoCc + "<br>");
+    document.write(" Notas: " + notasCc + "<br>");
+    for(i=n-2; i>0; i--){ //Organizando as notas em ordem decrescente
+        for(j=0; j<i; j++){
+            if(notasCc[j] < notasCc[j+1]){
+                auxN = notasCc[j];
+                auxC = codigoCc[j];
+                notasCc[j] = notasCc[j+1];
+                codigoCc[j] = codigoCc[j+1];
+                notasCc[j+1] = auxN;
+                codigoCc[j+1] = auxC;
+            }
+        }
+    }
+
+    //Engenharia de Computação
+
+    i = 0;
+    n = 1;
+    alert("Os dados solicitados a seguir são referentes às vagas de Engenharia de Computação.");
+    cod = prompt("Informe o código do 1º candidato.");
+    while(cod != 0){ //Preenchimento dos vetores
+        codigoEc[i] = cod;
+        nota = prompt("Informe a pontuação do " + n + "º candidato.");
+        while(nota<0 || nota>100){ //Validação da nota
+            alert("Nota inválida! A pontuação vale de 0 a 100.");
+            nota = prompt("Informe a pontuação do " + n + "º candidato.");
+        }
+        notasEc[i] = nota;
+        i++;
+        n++;
+        cod = prompt("Informe o código do " + n + "º candidato.");
+    }
+    //Lista de pontuação desordenada
+    document.write("<br>Candidatos de Engenharia de Computação (EC):<br>");
+    document.write("Código: " + codigoEc + "<br>");
+    document.write(" Notas: " + notasEc + "<br>");
+    for(i=n-2; i>0; i--){ //Organizando as notas em ordem decrescente
+        for(j=0; j<i; j++){
+            if(notasEc[j] < notasEc[j+1]){
+                auxN = notasEc[j];
+                auxC = codigoEc[j];
+                notasEc[j] = notasEc[j+1];
+                codigoEc[j] = codigoEc[j+1];
+                notasEc[j+1] = auxN;
+                codigoEc[j+1] = auxC;
+            }
+        }
+    }
+
+    //Análise de Sistemas
+
+    i = 0;
+    n = 1;
+    alert("Os dados solicitados a seguir são referentes às vagas de Análise de Sistemas.");
+    cod = prompt("Informe o código do 1º candidato.");
+    while(cod != 0){ //Preenchimento dos vetores
+        codigoAs[i] = cod;
+        nota = prompt("Informe a pontuação do " + n + "º candidato.");
+        while(nota<0 || nota>100){ //Validação da nota
+            alert("Nota inválida! A pontuação vale de 0 a 100.");
+            nota = prompt("Informe a pontuação do " + n + "º candidato.");
+        }
+        notasAs[i] = nota;
+        i++;
+        n++;
+        cod = prompt("Informe o código do " + n + "º candidato.");
+    }
+    //Lista de pontuação desordenada
+    document.write("<br>Candidatos de Análise de Sistemas (AS):<br>");
+    document.write("Código: " + codigoAs + "<br>");
+    document.write(" Notas: " + notasAs + "<br><br>");
+    for(i=n-2; i>0; i--){ //Organizando as notas em ordem decrescente
+        for(j=0; j<i; j++){
+            if(notasAs[j] < notasAs[j+1]){
+                auxN = notasAs[j];
+                auxC = codigoAs[j];
+                notasAs[j] = notasAs[j+1];
+                codigoAs[j] = codigoAs[j+1];
+                notasAs[j+1] = auxN;
+                codigoAs[j+1] = auxC;
+            }
+        }
+    }
+
+    //Criando matriz 6x40
+
+    M[0] = codigoCc;
+    M[1] = notasCc;
+    M[2] = codigoEc;
+    M[3] = notasEc;
+    M[4] = codigoAs;
+    M[5] = notasAs;
+
+    // Apresentando a matriz
+
+    document.write("Aprovados CC: ");
+    for(j=0; j<40; j++){
+        document.write(M[0][j] + " ");
+    }
+    document.write("<br>Pontuação CC: ");
+    for(j=0; j<40; j++){
+        document.write(M[1][j] + " ");
+    }
+    document.write("<br>Aprovados EC: ");
+    for(j=0; j<40; j++){
+        document.write(M[2][j] + " ");
+    }
+    document.write("<br>Pontuação EC: ");
+    for(j=0; j<40; j++){
+        document.write(M[3][j] + " ");
+    }
+    document.write("<br>Aprovados AS: ");
+    for(j=0; j<40; j++){
+        document.write(M[4][j] + " ");
+    }
+    document.write("<br>Pontuação AS: ");
+    for(j=0; j<40; j++){
+        document.write(M[5][j] + " ");
+    }
+</script>

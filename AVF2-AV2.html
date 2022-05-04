@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+<script>
+    var x, h, s, Hmax, Hmin, sm, mm, total, media, mostra;
+    mostra = function(frase){
+        document.write(frase + "<br>");
+    };
+    Hmax = 0;
+    Hmin = 500;
+    sm = 0;
+    nm = 0;
+    total = 0;
+    for(x=1; x<=50; x++){
+        s = prompt("Informe o sexo da " + x + "a. pessoa:   1. Masculino   2. Feminino");
+        h = Number(prompt("Informe a altura da " + x + "a. pessoa em cm."));
+        if(s == 1){
+            if(Hmax < h){
+                Hmax = h;
+            }
+            if(Hmin > h){
+                Hmin = h;
+            }
+        }else{
+            sm += h;
+            nm++;
+        }
+        total += h;
+    }
+    mm = sm / nm;
+    media = total / 50;
+    mostra("O homem mais alto tem " + Hmax + "cm de altura.");
+    mostra("O homem mais baixo tem " + Hmin + "cm de altura.");
+    mostra("A altura média das mulheres é " + mm.toFixed(1) + "cm.");
+    mostra("A altura média das 50 pessoas é " + media.toFixed(1) + "cm.");
+</script>

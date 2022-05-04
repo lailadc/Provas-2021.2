@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+<script>
+    var c, b, f, precoC, precoB;
+    f = Number(prompt("Informe a quantidade de funcionários que há na metalúrgica."));
+    c = Number(prompt("Informe a quantidade de barras produzidas no ano."));
+    b = Number(prompt("Informe a quantidade de barras produzidas no ano."));
+    precoC = c * 5;
+    precoB = b * 2.5;
+    if(c>100000 && b>50000){
+        var lucro = ((precoB - 125000) + (precoC - 500000))/f;
+        alert("Houve divisão do lucro!")
+        document.write("Cada funcionário recebeu: R$ " + lucro.toFixed(2));
+    } else {
+        if(c>100000){
+            var lucro = (precoC - 500000)/(2 * f);
+            alert("Houve divisão do lucro!");
+            document.write("Cada funcionário recebeu: R$ " + lucro.toFixed(2));
+        }
+        if(b>50000){
+            var lucro = (precoB - 125000);
+            alert("Não houve divisão do lucro.");
+            document.write("A empresa lucrou: R$ " + lucro.toFixed(2));
+        }
+    }
+</script>

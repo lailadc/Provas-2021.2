@@ -1,0 +1,22 @@
+<meta charset="UTF-8">
+<script>
+    var sm, valor;
+    sm = Number(prompt("Informe o saldo médio do cliente."));
+    document.write("O saldo médio do cliente é: R$ " + sm.toFixed(2) + "<br>");
+    if(sm <= 200){
+        document.write("O cliente não receberá crédito especial.")
+    } else {
+        if(sm <= 400){
+            valor = sm * 0.2;
+            document.write("Valor do cédito especial: R$ " + valor.toFixed(2));
+        } else {
+            if(sm <= 600){
+                valor = sm * 0.3;
+                document.write("Valor do crédito especial: R$ " + valor.toFixed(2));
+            } else {
+                valor = sm * 0.4;
+                document.write("Valor do crédito especial: R$ " + valor.toFixed(2));
+            }
+        }
+    }
+</script>

@@ -1,0 +1,40 @@
+<meta charset="UTF-8">
+<script>
+    var cidade, estado, nv, na, menor, maior, x, somaMA, nMA, somaCE, nCE, mediaMA, mediaCE, cidadeMenor, cidadeMaior, estadoMaior, estadoMenor;
+    menor = 1000000000;
+    maior = 0;
+    somaMA = 0;
+    nMA = 0;
+    somaCE = 0;
+    nCE = 0;
+    for(x=1; x<=50; x++){
+        cidade = prompt("Informe a " + x + "a. cidade.");
+        estado = prompt("Informe a sigla do estado em letras maiúsculas.");
+        nv = Number(prompt("Informe o número de veículos de passeio em 2020."));
+        na = Number(prompt("Informe o número de acidentes com vítimas fatais em 2020."));
+        if(maior < na){
+            maior = na;
+            cidadeMaior = cidade;
+            estadoMaior = estado;
+        }
+        if(menor > na){
+            menor = na;
+            cidadeMenor = cidade;
+            estadoMenor = estado;
+        }
+        if(estado == "MA"){
+            somaMA += nv;
+            nMA++;
+        }
+        if(estado == "CE"){
+            somaCE += nv;
+            nCE++;
+        }
+    }
+    mediaMA = Math.round(somaMA / nMA);
+    mediaCE = Math.round(somaCE / nCE);
+    document.write("A cidade com menos número de acidentes de trânsito fatais em 2020 foi " + cidadeMenor + "-" +estadoMenor + " com " + menor + " acidentes fatais.<br>");
+    document.write("A cidade com mais número de acidentes de trânsito fatais em 2020 foi: " + cidadeMaior + "-" + estadoMaior + " com " + maior + " acidentes fatais.<br>");
+    document.write("A média de veículos nas cidades maranheses é " + mediaMA + "<br>");
+    document.write("A média de acidentes com vítimas fatais nas cidades cearenses é " + mediaCE);
+</script>

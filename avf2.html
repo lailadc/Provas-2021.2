@@ -1,0 +1,32 @@
+<meta charset = "UTF-8">
+<script>
+	var n = parseInt(prompt("Informe o número de maçãs a comprar."));
+	var f = parseInt(prompt("Você tem o cartão de fidelidade? Digite o número correspondente a:   1. sim    2. não"));
+	if(f == 1){
+		if(n < 12){
+			var p = n * 0.30 * 0.9;
+			document.write("Valor total = R$ " + p.toFixed(2));
+		} else {
+			if(n < 24){
+				var p = n * 0.25 * 0.9;
+				document.write("Valor total = R$ " + p.toFixed(2));
+			} else {
+				var p = n * 0.20 * 0.9;
+				document.write("Valor total = R$ " + p.toFixed(2));
+			}
+		}
+	} else {
+		if(n < 12){
+			var p = n * 0.30;
+			document.write("Valor total = R$ " + p.toFixed(2));
+		} else {
+			if(n < 24){
+				var p = n * 0.25;
+				document.write("Valor total = R$ " + p.toFixed(2));
+			} else {
+				var p = n * 0.20;
+				document.write("Valor total = R$ " + p.toFixed(2));
+			}
+		}
+	}
+</script>

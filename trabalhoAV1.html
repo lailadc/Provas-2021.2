@@ -1,0 +1,44 @@
+<meta charset="UTF-8">
+<script>
+    var funcao = Number(prompt("Informe o número do que deseja calcular.    1.Força resultante    2.Energia cinética    3.Energia potêncial    4.Pressão"));
+    if(funcao==1){
+        var forca = function(massa, aceleração){
+            var Forca = massa * aceleração;
+            return Forca;
+        };
+        m = Number(prompt("Informe a massa em kg."));
+        a = Number(prompt("Informe a aceleração em m/s²."));
+        var F = forca(m, a);
+        document.write("A força resultante é " + F + "N.");
+    }
+    if(funcao==2){
+        var energiaC = function(massa, velocidade){
+            var EC = (massa * velocidade**2)/2;
+            return EC;
+        };
+        m = Number(prompt("Informe a massa em kg."));
+        v = Number(prompt("Informe a velocidade em m/s."));
+        var Ec = energiaC(m, v);
+        document.write("A energia cinética é " + Ec + "N.");
+    }
+    if(funcao==3){
+        var energiaP = function(massa, altura){
+            var EP = massa * 9.8 * altura;
+            return EP;
+        };
+        m = Number(prompt("Informe a massa em kg."));
+        a = Number(prompt("Informe a altura em metro."));
+        var Ep = energiaP(m, a);
+        document.write("A energia potencial é " + Ep + "N.");
+    }
+    if(funcao==4){
+        var pressao = function(força, área){
+            var P = força / área;
+            return P;
+        };
+        f = Number(prompt("Informe a força em N."));
+        a = Number(prompt("Informe a área em m²."));
+        var p = pressao(f, a);
+        document.write("A pressão no local é de " + p + "Pa.");
+    }
+</script>
